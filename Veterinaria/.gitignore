@@ -1,0 +1,16 @@
+# Archivos y carpetas del entorno
+.vscode/
+.idea/
+*.iml
+
+# Archivos de compilación Java
+*.class
+/bin/
+/out/
+
+# Archivos temporales o de sistema
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
