@@ -1,5 +1,9 @@
 package pkVeterinaria.pkReinoViviente.pkAnimal;
 
-public abstract class ReinoAnimal {
+import pkVeterinaria.pkReinoViviente.SerVivo;
 
+public abstract class ReinoAnimal extends SerVivo {
+    protected ReinoAnimal() {
+        super();
+    }
 }
