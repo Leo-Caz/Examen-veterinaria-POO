@@ -1,5 +1,7 @@
 package pkVeterinaria.pkReinoViviente.pkAnimal;
 
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamiferos.Acuatico;
+
 public abstract class Pez extends Acuatico {
     protected Pez(String nombre) {
         super(nombre);

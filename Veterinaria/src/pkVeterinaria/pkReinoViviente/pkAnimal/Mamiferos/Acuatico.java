@@ -1,4 +1,6 @@
-package pkVeterinaria.pkReinoViviente.pkAnimal;
+package pkVeterinaria.pkReinoViviente.pkAnimal.Mamiferos;
+
+import pkVeterinaria.pkReinoViviente.pkAnimal.AnimalVertebrado;
 
 public abstract class Acuatico extends AnimalVertebrado {
     protected Acuatico(String nombre) {

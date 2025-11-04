@@ -1,5 +1,7 @@
 package pkVeterinaria.pkReinoViviente.pkAnimal;
 
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamiferos.Mamifero;
+
 public class Perro extends Mamifero {
     public Perro(String nombre) {
         super(nombre);
