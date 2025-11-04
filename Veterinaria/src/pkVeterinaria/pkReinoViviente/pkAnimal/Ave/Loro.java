@@ -1,4 +1,6 @@
-package pkVeterinaria.pkReinoViviente.pkAnimal;
+package pkVeterinaria.pkReinoViviente.pkAnimal.Ave;
+
+import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
 
 public class Loro extends Ave {
     public Loro(String nombre) {
@@ -18,7 +20,7 @@ public class Loro extends Ave {
         System.out.println("El loro repite palabras divertidas....");
     }
 
-    public void hablarA(Serpiente serpiente) {
+    public void hablarA(Cocodrilo serpiente) {
         if (serpiente == null) {
             return;
         }

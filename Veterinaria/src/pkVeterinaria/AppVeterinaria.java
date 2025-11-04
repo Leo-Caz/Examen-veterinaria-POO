@@ -3,11 +3,11 @@ package pkVeterinaria;
 import pkVeterinaria.pkFinanza.DataFast;
 import pkVeterinaria.pkHumano.Propietario;
 import pkVeterinaria.pkHumano.Veterinario;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Loro;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Perro;
-import pkVeterinaria.pkReinoViviente.pkAnimal.PezPayaso;
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Serpiente;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Loro;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
 
 public class AppVeterinaria {
     private String log;
@@ -21,9 +21,9 @@ public class AppVeterinaria {
     public void iniciarMundoAnimal() {
         Propietario propietario = new Propietario("1734537890", "Atena", "Santana");
         Veterinario veterinario = new Veterinario("187654321", "Grupo 1", "Veterinaria");
-        Perro perro = new Perro("Rocky");
+        Lobo perro = new Lobo("Rocky");
         Loro loro = new Loro("Plumas");
-        Serpiente serpiente = new Serpiente("Sombra");
+        Cocodrilo serpiente = new Cocodrilo("Sombra");
         PezPayaso pezPayaso = new PezPayaso("Nemo");
         DataFast dataFast = new DataFast();
 

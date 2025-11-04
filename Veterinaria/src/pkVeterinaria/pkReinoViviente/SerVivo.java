@@ -3,7 +3,8 @@ package pkVeterinaria.pkReinoViviente;
 public abstract class SerVivo {
     private boolean estaVivo;
     private String nombre;
-
+    private int edad;
+    
     public SerVivo() {
         this.estaVivo = true;
     }
@@ -22,5 +23,13 @@ public abstract class SerVivo {
 
     public void setEstaVivo(boolean estaVivo) {
         this.estaVivo = estaVivo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 }

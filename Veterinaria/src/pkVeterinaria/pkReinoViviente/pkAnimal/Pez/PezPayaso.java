@@ -1,4 +1,6 @@
-package pkVeterinaria.pkReinoViviente.pkAnimal;
+package pkVeterinaria.pkReinoViviente.pkAnimal.Pez;
+
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
 
 public class PezPayaso extends Pez {
     public PezPayaso(String nombre) {
@@ -14,7 +16,7 @@ public class PezPayaso extends Pez {
         System.out.println("El pez payaso mordisquea el coral....");
     }
 
-    public void nadarAlrededorDe(Perro perro) {
+    public void nadarAlrededorDe(Lobo perro) {
         if (perro == null) {
             return;
         }
