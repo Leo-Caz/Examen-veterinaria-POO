@@ -8,7 +8,7 @@ public class PezPayaso extends Pez {
     }
 
     @Override
-    protected void emergerDelHuevo() {
+    public void emergerDelHuevo() {
         System.out.println("El pez payaso esta saliendo del huevo entre los corales....");
     }
 

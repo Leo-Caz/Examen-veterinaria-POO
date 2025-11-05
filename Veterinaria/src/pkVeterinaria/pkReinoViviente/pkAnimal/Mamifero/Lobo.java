@@ -6,6 +6,8 @@ public class Lobo extends Carnivoro {
     public Boolean tieneDientes;
     public Lobo(String nombre) {
         super(nombre);
+        this.tieneDientes = true;
+        lactar();
     }
     @Override
     public void comer() {
@@ -23,10 +25,10 @@ public class Lobo extends Carnivoro {
         System.out.println("El lobo " + this.getNombre() + " logro cazar al conejo " + conejo.getNombre() + " ....");
     }
 
-    public void comerLoro(Loro loro) {
+    public void aullarLoro(Loro loro) {
         if (loro == null) {
             return;
         }
-        System.out.println("El perro " + this.getNombre() + " esta ladrando al loro " + loro.getNombre() + " con furia....");
+        System.out.println("El lobo " + this.getNombre() + " esta aullando al loro " + loro.getNombre() + " con furia....");
     }
 }

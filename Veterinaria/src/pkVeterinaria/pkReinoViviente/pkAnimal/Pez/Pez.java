@@ -8,7 +8,7 @@ public abstract class Pez extends Acuatico {
     }
 
     @Override
-    protected void emergerDelHuevo() {
+    public void emergerDelHuevo() {
         System.out.println("El pez esta saliendo del huevo....");
     }
 

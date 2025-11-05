@@ -1,10 +1,14 @@
 package pkVeterinaria;
 
+import java.util.List;
+
 import pkVeterinaria.pkFinanza.DataFast;
 import pkVeterinaria.pkHumano.Propietario;
 import pkVeterinaria.pkHumano.Veterinario;
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Loro;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.ControllerRio;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
@@ -31,7 +35,29 @@ public class AppVeterinaria {
             System.out.println("No se pudo establecer la clave del veterinario.");
             return;
         }
+        //CAMBIOS MIOS
+        System.out.println("\n--- caso de uso: REQ 02 ---");
+        ControllerRio controller = new ControllerRio();
+        List<Conejo> lstHeridos = controller.animalesRio();
 
+        if (lstHeridos != null && !lstHeridos.isEmpty()) {
+            System.out.println("\n--- caso de uso: REQ 01 (registro en vet) ---");
+            for (Conejo c : lstHeridos) {
+                registrar(c);  
+            }
+            System.out.println("\n--- caso de uso: REQ (curar) ---");
+            for (Conejo c : lstHeridos) {
+                veterinario.curar(c);
+            }
+        } else {
+            System.out.println("\nNo hubo heridos provenientes del accidente.");
+        }
+
+        System.out.println("\n--- caso de uso: REQ 03 ---");
+            dataFast.procesarCobroGrupal(lstHeridos,120,80, true);
+            dataFast.imprimirResumen();
+        System.out.println("FIN");
+        ////
         System.out.println("\n--- caso de uso: REQ 02 ---");
         if (ingresar(veterinario)) {
             System.out.println("Acceso concedido. Bienvenido, " + veterinario.getNombre() + ".");
@@ -50,7 +76,7 @@ public class AppVeterinaria {
 
             System.out.println("\n--- caso de uso: REQ 04 ---");
             perro.comer();
-            perro.ladrarA(loro);
+            perro.aullarLoro(loro);
             loro.comer();
             loro.hablarA(serpiente);
             serpiente.comer();

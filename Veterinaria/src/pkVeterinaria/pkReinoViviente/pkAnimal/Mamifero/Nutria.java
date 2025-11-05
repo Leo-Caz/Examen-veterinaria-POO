@@ -7,4 +7,9 @@ public class Nutria extends Acuatico {
         super(nombre);
         this.tieneGarras = true;
     }   
+
+    @Override
+    public void nadar() {
+        System.out.println("La nutria esta nadando juguetonamente en el rio....");
+    }
 }

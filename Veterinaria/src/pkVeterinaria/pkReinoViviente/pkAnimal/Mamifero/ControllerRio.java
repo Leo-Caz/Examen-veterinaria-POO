@@ -2,27 +2,79 @@ package pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Ave;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ControllerRio {
     public Integer temperaturaGrado;
 
-    public void animalesRio(){
-        List<Conejos>       lstConejos   = new ArrayList<>();
-        List<Lobos>         lstLobos     = new ArrayList<>();
-        List<Nutrias>       lstNutrias   = new ArrayList<>();
-        List<Ave>           lstAve       = new ArrayList<>();
-        
-        lstConejos.add(new Conejo("Buggs"));
-        lstLobos.add(new Lobo("Lobezno"));
-        lstNutrias.add(new Nutria("Nutty"));
-        lstAve.add(new Ave("PajaroRio"));
-       
-    }
+    public List<Conejo> animalesRio(){
+        List<Conejo>       lstConejo   = new ArrayList<>();
+        List<Lobo>         lstLobo     = new ArrayList<>();
+        List<Nutria>       lstNutria   = new ArrayList<>();
+        List<Conejo>       lstHeridos  = new ArrayList<>();
 
-    public void iniciar(){
-        //Objetos
+        lstConejo.add(new Conejo("Buggs"));
+        lstConejo.add(new Conejo("Lola"));
+        lstConejo.add(new Conejo("Carlos"));
+        lstConejo.add(new Conejo("Roger"));
+
+        lstLobo.add(new Lobo("Lobo Feroz"));
+        lstLobo.add(new Lobo("Lobezno"));
+        lstLobo.add(new Lobo("Marley"));
+
+        lstNutria.add(new Nutria("Nutty"));
+        lstNutria.add(new Nutria("Olivia"));
+        lstNutria.add(new Nutria("Nina"));
+    
+        System.out.println("\n--- R02:Animales del Rio ---\n");
+
+        // Conejos y nutrias juegan juntos
+        int minSize = Math.min(lstConejo.size(), lstNutria.size());
+            for (int i = 0; i < minSize; i++) {
+                Conejo conejo = lstConejo.get(i);
+                Nutria nutria = lstNutria.get(i);
+
+                conejo.tomarAgua();
+                nutria.nadar();
+                conejo.jugar(nutria);
+            }
+        System.out.println("\nLos conejos y las nutrias están jugando alegremente en el río.\n");
+        // Los lobos comienzan a acechar
+        for (Lobo lobo : lstLobo) {
+            lobo.acechar();
+        }
+        System.out.println("\nLos lobos han comenzado a acechar...\n");
+        // Conejos y nutrias se esconden
+        for (Conejo conejo : lstConejo) {
+            conejo.esconderse();
+        }
+        for (Nutria nutria : lstNutria) {
+            nutria.esconderse();
+        }
+        System.out.println("\nLos conejos y las nutrias se esconden rápidamente.\n");
+        // Los lobos cazan y hieren conejos
+        if (lstConejo.size() >= 2) {
+            int i = ThreadLocalRandom.current().nextInt(lstConejo.size());
+            int j;
+        do { j = ThreadLocalRandom.current().nextInt(lstConejo.size()); 
+        } while (j == i);
+
+        Conejo v1 = lstConejo.get(i);
+        Conejo v2 = lstConejo.get(j);
+
+        if (!lstHeridos.contains(v1)) lstHeridos.add(v1);
+        if (!lstHeridos.contains(v2)) lstHeridos.add(v2);
+
+        // un lobo al azar 
+        if (!lstLobo.isEmpty()) {
+            Lobo loboCazador = lstLobo.get(ThreadLocalRandom.current().nextInt(lstLobo.size()));
+            loboCazador.cazar();
+            loboCazador.comer(v1);
+            System.out.println("\n" + loboCazador.getNombre() + " cazó a " + v1.getNombre() + " y otro lobo cazó a " + v2.getNombre() + ".\n");
+        }
     }
+    System.out.println("--- Fin R02: Animales del Río ---\n");
+    return lstHeridos;
+}
 }
 
