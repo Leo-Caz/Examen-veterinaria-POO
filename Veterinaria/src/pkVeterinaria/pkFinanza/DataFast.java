@@ -3,7 +3,6 @@ package pkVeterinaria.pkFinanza;
 import java.util.List;
 
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
 
 public class DataFast extends Banco {
     public DataFast() {
