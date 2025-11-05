@@ -25,7 +25,7 @@ public class DataFast extends Banco {
         }
     }
 
-    public void procesarCobroG(List<? extends ReinoAnimal> pacientes,double costoConsulta, double costoMedicamentos,boolean emergencia) {
+    public void procesarCobroGrupal(List<? extends ReinoAnimal> pacientes,double costoConsulta, double costoMedicamentos,boolean emergencia) {
         if (pacientes == null || pacientes.isEmpty()) {
             System.out.println("No hay animales para cobrar.");
             return;
@@ -43,10 +43,5 @@ public class DataFast extends Banco {
         System.out.println("Total consultas: " + getTotalConsultas());
         System.out.println("Total medicamentos: " + getTotalMedicamentos());
         System.out.println("Total general: " + getTotalCobros());
-    }
-
-    public void procesarCobroGrupal(List<Conejo> lstHeridos, int i, int j, boolean b) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'procesarCobroGrupal'");
     }
 }

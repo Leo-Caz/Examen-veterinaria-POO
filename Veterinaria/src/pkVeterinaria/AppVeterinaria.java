@@ -54,7 +54,7 @@ public class AppVeterinaria {
         }
 
         System.out.println("\n--- caso de uso: REQ 03 ---");
-            dataFast.procesarCobroGrupal(lstHeridos, 120, 80, true);
+            dataFast.procesarCobroGrupal(lstHeridos,120,80, true);
             dataFast.imprimirResumen();
         System.out.println("FIN");
         ////
