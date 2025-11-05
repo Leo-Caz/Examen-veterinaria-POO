@@ -13,11 +13,11 @@ public abstract class Mamifero extends AnimalVertebrado {
     }
 
     public void comer() {
-        System.out.println("El mamifero esta comiendo.... Hambre!!");
+        System.out.println("El mamifero esta comiendo....");
     }
 
-    public void jugar() {
-        System.out.println("El mamifero esta jugando alegremente....");
+    public void jugar(Mamifero mamifero) {
+        System.out.println("El mamifero "+ this.getNombre() + " esta jugando alegremente con " + mamifero.getNombre() + " ...");
     }
 
     public void tomarAgua() {
@@ -25,6 +25,6 @@ public abstract class Mamifero extends AnimalVertebrado {
     }
 
     public void esconderse() {
-        System.out.println("El mamifero se esta escondiendo....");
+        System.out.println(this.getNombre() +" se esta escondiendo....");
     }
 }

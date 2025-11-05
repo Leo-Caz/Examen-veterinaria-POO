@@ -5,6 +5,8 @@ public class Conejo extends Herbivoro {
 
     public Conejo(String nombre) {
         super(nombre);
+        lactar();
+        this.orejasLargas = true;
     }
 
     public void brincar() {

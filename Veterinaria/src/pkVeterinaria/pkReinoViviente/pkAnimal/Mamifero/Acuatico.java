@@ -10,6 +10,10 @@ public abstract class Acuatico extends Mamifero {
         this.respiraAire = true;
     }
 
+    public void emergerDelHuevo() {
+        System.out.println("El mamifero esta saliendo del huevo....");
+    }
+
     public void nadar() {
         System.out.println("El animal acuatico esta nadando....");
     }
