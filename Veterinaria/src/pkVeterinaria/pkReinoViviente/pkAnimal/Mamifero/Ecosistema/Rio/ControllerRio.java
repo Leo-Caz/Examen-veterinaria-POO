@@ -1,7 +1,12 @@
-package pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero;
+package pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Ecosistema.Rio;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Nutria;
 
 public class ControllerRio {
     public Integer temperaturaGrado;
@@ -53,17 +58,26 @@ public class ControllerRio {
         System.out.println("\nLos conejos y las nutrias se esconden rápidamente.\n");
         // Los lobos cazan y hieren conejos
         if (lstConejo.size() >= 2) {
-            lstLobo.forEach(Lobo::cazar);
+            int i = ThreadLocalRandom.current().nextInt(lstConejo.size());
+            int j;
+        do { j = ThreadLocalRandom.current().nextInt(lstConejo.size()); 
+        } while (j == i);
 
-            lstHeridos.add(lstConejo.get(0));
-            lstHeridos.add(lstConejo.get(1));
+        Conejo v1 = lstConejo.get(i);
+        Conejo v2 = lstConejo.get(j);
 
-            for (Lobo lobo : lstLobo) {
-                lobo.comer(lstConejo.get(0));
-            }
-            System.out.println("\nLos lobos han cazado a dos conejos. 🐺🐇🐇\n");
+        if (!lstHeridos.contains(v1)) lstHeridos.add(v1);
+        if (!lstHeridos.contains(v2)) lstHeridos.add(v2);
+
+        // un lobo al azar 
+        if (!lstLobo.isEmpty()) {
+            Lobo loboCazador = lstLobo.get(ThreadLocalRandom.current().nextInt(lstLobo.size()));
+            loboCazador.cazar();
+            loboCazador.comer(v1);
+            System.out.println("\n" + loboCazador.getNombre() + " cazó a " + v1.getNombre() + " y otro lobo cazó a " + v2.getNombre() + ".\n");
         }
-        System.out.println("--- Fin R02: Animales del Río ---\n");
+    }
+    System.out.println("--- Fin R02: Animales del Río ---\n");
     return lstHeridos;
 }
 }
