@@ -28,7 +28,6 @@ public class ControllerRio {
     
         System.out.println("\n--- R02:Animales del Rio ---\n");
 
-        // Conejos y nutrias juegan juntos
         int minSize = Math.min(lstConejo.size(), lstNutria.size());
             for (int i = 0; i < minSize; i++) {
                 Conejo conejo = lstConejo.get(i);
@@ -39,12 +38,11 @@ public class ControllerRio {
                 conejo.jugar(nutria);
             }
         System.out.println("\nLos conejos y las nutrias están jugando alegremente en el río.\n");
-        // Los lobos comienzan a acechar
+
         for (Lobo lobo : lstLobo) {
             lobo.acechar();
         }
         System.out.println("\nLos lobos han comenzado a acechar...\n");
-        // Conejos y nutrias se esconden
         for (Conejo conejo : lstConejo) {
             conejo.esconderse();
         }
@@ -52,7 +50,6 @@ public class ControllerRio {
             nutria.esconderse();
         }
         System.out.println("\nLos conejos y las nutrias se esconden rápidamente.\n");
-        // Los lobos cazan y hieren conejos
         if (lstConejo.size() >= 2) {
             int i = ThreadLocalRandom.current().nextInt(lstConejo.size());
             int j;
@@ -65,7 +62,6 @@ public class ControllerRio {
         if (!lstHeridos.contains(v1)) lstHeridos.add(v1);
         if (!lstHeridos.contains(v2)) lstHeridos.add(v2);
 
-        // un lobo al azar 
         if (!lstLobo.isEmpty()) {
             Lobo loboCazador = lstLobo.get(ThreadLocalRandom.current().nextInt(lstLobo.size()));
             loboCazador.cazar();

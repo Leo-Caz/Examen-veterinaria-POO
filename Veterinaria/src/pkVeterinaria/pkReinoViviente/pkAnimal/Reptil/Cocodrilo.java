@@ -1,7 +1,7 @@
 package pkVeterinaria.pkReinoViviente.pkAnimal.Reptil;
 
 import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
-//no puede ser serpiente porque estamos hablando de vertebrados
+
 public class Cocodrilo extends Reptil {
     public Cocodrilo(String nombre) {
         super(nombre);
@@ -17,6 +17,7 @@ public class Cocodrilo extends Reptil {
     }
 
     public void sisearA(PezPayaso pez) {
+  
         if (pez == null) {
             return;
         }

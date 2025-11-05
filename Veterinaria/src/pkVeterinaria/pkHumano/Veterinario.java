@@ -37,6 +37,7 @@ public class Veterinario extends Persona {
     }
 
     public boolean setClave(String login, String password) {
+
         if (login == null || password == null) {
             return false;
         }
@@ -49,6 +50,7 @@ public class Veterinario extends Persona {
     }
 
     public void curar(ReinoAnimal paciente) {
+
         if (paciente == null) {
             return;
         }
@@ -58,6 +60,7 @@ public class Veterinario extends Persona {
     }
 
     public void agregarAlHistorial(ReinoAnimal animal) {
+
         if (animal != null) historialAtenciones.add(animal);
     }
 
@@ -73,6 +76,7 @@ public class Veterinario extends Persona {
     }
 
     public void registrarTratamiento(String tratamiento) {
+
         if (tratamiento != null && !tratamiento.isEmpty()) tratamientosAplicados.add(tratamiento);
     }
 

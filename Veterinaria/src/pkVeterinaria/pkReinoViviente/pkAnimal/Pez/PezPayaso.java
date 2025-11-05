@@ -17,6 +17,7 @@ public class PezPayaso extends Pez {
     }
 
     public void nadarAlrededorDe(Lobo perro) {
+
         if (perro == null) {
             return;
         }

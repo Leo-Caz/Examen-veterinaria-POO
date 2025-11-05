@@ -1,16 +1,15 @@
 package pkVeterinaria;
 
 import java.util.List;
-
 import pkVeterinaria.pkFinanza.DataFast;
 import pkVeterinaria.pkHumano.Propietario;
 import pkVeterinaria.pkHumano.Veterinario;
-import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Loro;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.ControllerRio;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
+import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
 
 public class AppVeterinaria {
@@ -31,20 +30,24 @@ public class AppVeterinaria {
         PezPayaso pezPayaso = new PezPayaso("Nemo");
         DataFast dataFast = new DataFast();
 
+   
         if (!veterinario.setClave("usrVet", "passVet")) {
             System.out.println("No se pudo establecer la clave del veterinario.");
             return;
         }
-        //CAMBIOS MIOS
+        
+
         System.out.println("\n--- caso de uso: REQ 02 ---");
         ControllerRio controller = new ControllerRio();
         List<Conejo> lstHeridos = controller.animalesRio();
 
         if (lstHeridos != null && !lstHeridos.isEmpty()) {
+    
             System.out.println("\n--- caso de uso: REQ 01 (registro en vet) ---");
             for (Conejo c : lstHeridos) {
                 registrar(c);  
             }
+
             System.out.println("\n--- caso de uso: REQ (curar) ---");
             for (Conejo c : lstHeridos) {
                 veterinario.curar(c);
@@ -54,13 +57,14 @@ public class AppVeterinaria {
         }
 
         System.out.println("\n--- caso de uso: REQ 03 ---");
-            dataFast.procesarCobroGrupal(lstHeridos,120,80, true);
-            dataFast.imprimirResumen();
+        dataFast.procesarCobroGrupal(lstHeridos,120,80, true);
+        dataFast.imprimirResumen();
         System.out.println("FIN");
-        ////
+    
         System.out.println("\n--- caso de uso: REQ 02 ---");
         if (ingresar(veterinario)) {
             System.out.println("Acceso concedido. Bienvenido, " + veterinario.getNombre() + ".");
+
 
             System.out.println("\n--- caso de uso: REQ 01 ---");
             registrar(perro);
