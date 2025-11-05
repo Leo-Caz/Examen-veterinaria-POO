@@ -8,8 +8,8 @@ import pkVeterinaria.pkHumano.Veterinario;
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Loro;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.ControllerRio;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Ecosistema.Rio.ControllerRio;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
 

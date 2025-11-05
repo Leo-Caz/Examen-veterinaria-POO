@@ -1,5 +1,5 @@
 import pkVeterinaria.AppVeterinaria;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Ecosistema.Rio.ControllerRio;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.ControllerRio;
 
 public class App {
     public static void main(String[] args) throws Exception {
