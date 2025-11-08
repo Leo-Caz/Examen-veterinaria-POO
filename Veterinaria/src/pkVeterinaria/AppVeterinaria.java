@@ -83,6 +83,14 @@ public class AppVeterinaria {
         System.out.println("\n--- R03: Canario y Loro ---\n");
         canarioTravieso.picotear(loro);
         System.out.println("El loro \"" + loro.getNombre() + "\" grita desesperadamente que se detenga!!!!");
+        canarioTravieso.comerSemillas("mijo ");
+        canarioTravieso.posarseEnRama("almendro");
+        canarioTravieso.emitirCanto();
+        canarioTravieso.acicalarPlumas();
+        loro.comerFrutasYSemillas("mango", "girasol");
+        loro.imitarSonido("comida comida !!!!");
+        loro.emitirCanto();
+        loro.acicalarPlumas();
         System.out.println("\n--- Fin R03: Canario y Loro ---\n");
     }
 
