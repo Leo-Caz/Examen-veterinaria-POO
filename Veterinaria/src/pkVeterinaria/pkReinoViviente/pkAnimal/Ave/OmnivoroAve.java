@@ -4,7 +4,7 @@ public abstract class OmnivoroAve extends Ave {
     private int racionesCompletas;
     private String ultimoSonidoImitado;
 
-    protected OmnivoroAve(String nombre, String colorPlumaje) {
+    public OmnivoroAve(String nombre, String colorPlumaje) {
         super(nombre, colorPlumaje);
         this.ultimoSonidoImitado = "";
     }

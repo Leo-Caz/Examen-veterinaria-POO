@@ -3,12 +3,11 @@ package pkVeterinaria.pkReinoViviente.pkAnimal.Ave;
 public abstract class HerbivoroAve extends Ave {
     private int semillasConsumidas;
     private String ultimaRamaVisitada;
-
-    protected HerbivoroAve(String nombre, String colorPlumaje) {
+    
+    public HerbivoroAve(String nombre, String colorPlumaje) {
         super(nombre, colorPlumaje);
         this.ultimaRamaVisitada = "arbusto cercano";
     }
-
     public void comerSemillas(String tipoSemilla) {
         semillasConsumidas++;
         System.out.println(
@@ -21,15 +20,12 @@ public abstract class HerbivoroAve extends Ave {
                 + " vez(es)...."
         );
     }
-
     public void posarseEnRama(String arbol) {
         ultimaRamaVisitada = arbol;
         System.out.println(
-            "El ave herbivora "+ getNombre()+ " se posa en la rama del "+ ultimaRamaVisitada+ " para observar el entorno...."
-);
+            "El ave herbivora "+ getNombre()+ " se posa en la rama del "+ ultimaRamaVisitada+ " para observar el entorno....");
     }
-
-    protected int getSemillasConsumidas() {
+    public int getSemillasConsumidas() {
         return semillasConsumidas;
     }
 }
