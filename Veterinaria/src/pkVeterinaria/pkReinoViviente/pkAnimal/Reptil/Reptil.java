@@ -6,11 +6,6 @@ public abstract class Reptil extends AnimalVertebrado {
     protected Reptil(String nombre) {
         super();
         setNombre(nombre);
-        romperHuevo();
-    }
-
-    protected void romperHuevo() {
-        System.out.println("El reptil esta rompiendo el huevo....");
     }
 
     public void reptar() {

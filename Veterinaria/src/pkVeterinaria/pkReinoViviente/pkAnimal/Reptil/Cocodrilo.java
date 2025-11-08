@@ -11,11 +11,6 @@ public class Cocodrilo extends Reptil {
         System.out.println("La cocodrilo traga su alimento con calma....");
     }
 
-    @Override
-    protected void romperHuevo() {
-        System.out.println("La cocodrilo esta rompiendo el huevo para deslizarse....");
-    }
-
     public void sisearA(PezPayaso pez) {
   
         if (pez == null) {
