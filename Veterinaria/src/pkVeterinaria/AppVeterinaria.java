@@ -1,137 +1,140 @@
 package pkVeterinaria;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import pkVeterinaria.pkFinanza.DataFast;
 import pkVeterinaria.pkHumano.Propietario;
 import pkVeterinaria.pkHumano.Veterinario;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Canario;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Loro;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.ControllerRio;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Nutria;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
 
 public class AppVeterinaria {
-    private String log;
-    private String pass;
-
-    public AppVeterinaria() {
-        setLog("usrVet");
-        setPass("passVet");
-    }
 
     public void iniciarMundoAnimal() {
-        Propietario propietario = new Propietario("1734537890", "Atena", "Santana");
-        Veterinario veterinario = new Veterinario("187654321", "Grupo 1", "Veterinaria");
-        Lobo perro = new Lobo("Rocky");
+        Veterinario veterinario = new Veterinario("1104589623", "Valentina", "Ibarra");
+        Propietario cliente = new Propietario("0952147856", "Mateo", "Lagos");
+
         Loro loro = new Loro("Plumas");
-        Cocodrilo serpiente = new Cocodrilo("Sombra");
-        PezPayaso pezPayaso = new PezPayaso("Nemo");
+        Canario canarioPaciente = new Canario("Aurora");
+        Canario canarioTravieso = new Canario("Sol");
+        Conejo conejo = new Conejo("Copito");
+        Lobo lobo = new Lobo("Lobo Feroz");
+        Nutria nutria = new Nutria("Olivia");
+        Cocodrilo cocodrilo = new Cocodrilo("Sombra");
+        PezPayaso pez = new PezPayaso("Nemo");
+        ControllerRio controllerRio = new ControllerRio();
         DataFast dataFast = new DataFast();
 
-   
-        if (!veterinario.setClave("usrVet", "passVet")) {
-            System.out.println("No se pudo establecer la clave del veterinario.");
-            return;
+        imprimirCreacion(veterinario, cliente, loro, canarioPaciente, canarioTravieso, conejo, lobo, nutria);
+        ejecutarRegistro(veterinario, Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria));
+
+        List<Conejo> conejosHeridos = controllerRio.animalesRio();
+
+        escenaCanarioYLoro(canarioTravieso, loro);
+        escenaReptil(cocodrilo);
+        escenaPez(pez, lobo);
+
+        ejecutarCuraciones(veterinario, loro, canarioPaciente, conejo, lobo, nutria, conejosHeridos);
+        ejecutarPagos(cliente, dataFast, Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria));
+    }
+
+    private void imprimirCreacion(
+        Veterinario veterinario,
+        Propietario cliente,
+        Loro loro,
+        Canario canarioPaciente,
+        Canario canarioTravieso,
+        Conejo conejo,
+        Lobo lobo,
+        Nutria nutria
+    ) {
+        System.out.println(
+            "El veterinario se ha creado de nombre \"" + veterinario.getNombre() + "\" con cedula \"" + veterinario.getCedula() + "\""
+        );
+        System.out.println(
+            "El cliente se ha creado de nombre \"" + cliente.getNombre() + "\" con cedula \"" + cliente.getCedula() + "\""
+        );
+        System.out.println("Ha nacido el loro llamado \"" + loro.getNombre() + "\"");
+        System.out.println("Ha nacido el canario llamado \"" + canarioPaciente.getNombre() + "\"");
+        System.out.println("Ha nacido el canario llamado \"" + canarioTravieso.getNombre() + "\"");
+        System.out.println("Ha nacido el conejo llamado \"" + conejo.getNombre() + "\"");
+        System.out.println("Ha nacido el lobo llamado \"" + lobo.getNombre() + "\"");
+        System.out.println("Ha nacido el nutria llamado \"" + nutria.getNombre() + "\"");
+    }
+
+    private void ejecutarRegistro(Veterinario veterinario, List<? extends ReinoAnimal> animales) {
+        System.out.println("\n--- R01: Registro ---\n");
+        System.out.println("El veterinario esta:");
+        for (ReinoAnimal animal : animales) {
+            System.out.println(veterinario.registrarPaciente(animal));
         }
-        
+        System.out.println("\n--- Fin R01: Registro ---\n");
+    }
 
-        System.out.println("\n--- caso de uso: REQ 02 ---");
-        ControllerRio controller = new ControllerRio();
-        List<Conejo> lstHeridos = controller.animalesRio();
+    private void escenaCanarioYLoro(Canario canarioTravieso, Loro loro) {
+        System.out.println("\n--- R03: Canario y Loro ---\n");
+        canarioTravieso.picotear(loro);
+        System.out.println("El loro \"" + loro.getNombre() + "\" grita desesperadamente que se detenga!!!!");
+        System.out.println("\n--- Fin R03: Canario y Loro ---\n");
+    }
 
-        if (lstHeridos != null && !lstHeridos.isEmpty()) {
-    
-            System.out.println("\n--- caso de uso: REQ 01 (registro en vet) ---");
-            for (Conejo c : lstHeridos) {
-                registrar(c);  
-            }
+    private void escenaReptil(Cocodrilo cocodrilo) {
+        System.out.println("\n--- R04:Reptil ---\n");
+        cocodrilo.reptar();
+        cocodrilo.comer();
+        System.out.println("\n--- Fin R04: reptil ---\n");
+    }
 
-            System.out.println("\n--- caso de uso: REQ (curar) ---");
-            for (Conejo c : lstHeridos) {
-                veterinario.curar(c);
-            }
-        } else {
-            System.out.println("\nNo hubo heridos provenientes del accidente.");
+    private void escenaPez(PezPayaso pez, Lobo lobo) {
+        System.out.println("\n--- R05:Pez ---\n");
+        pez.nadar();
+        pez.comer();
+        pez.nadarAlrededorDe(lobo);
+        System.out.println("\n--- Fin R05: Pez ---\n");
+    }
+
+    private void ejecutarCuraciones(
+        Veterinario veterinario,
+        Loro loro,
+        Canario canarioPaciente,
+        Conejo conejo,
+        Lobo lobo,
+        Nutria nutria,
+        List<Conejo> conejosHeridos
+    ) {
+        System.out.println("\n--- R06: Veterinario cura a los animales ---\n");
+        List<ReinoAnimal> pacientes = new ArrayList<>();
+        pacientes.add(loro);
+        pacientes.add(canarioPaciente);
+        pacientes.add(conejo);
+        pacientes.add(lobo);
+        pacientes.add(nutria);
+        if (conejosHeridos != null) {
+            pacientes.addAll(conejosHeridos);
         }
+        for (ReinoAnimal paciente : pacientes) {
+            veterinario.curar(paciente);
+        }
+        System.out.println("\n--- Fin R06: Veterinario cura a los animales ---\n");
+    }
 
-        System.out.println("\n--- caso de uso: REQ 03 ---");
-        dataFast.procesarCobroGrupal(lstHeridos,120,80, true);
+    private void ejecutarPagos(Propietario cliente, DataFast dataFast, List<? extends ReinoAnimal> pacientes) {
+        System.out.println("\n--- R07: Cliente paga  ---\n");
+        System.out.println(
+            "El cliente " + cliente.getNombre() + " " + cliente.getApellido() + " esta pagando la atencion de sus animales...."
+        );
+        for (ReinoAnimal paciente : pacientes) {
+            dataFast.procesarCobro(paciente, 25.0, 12.5);
+        }
         dataFast.imprimirResumen();
-        System.out.println("FIN");
-    
-        System.out.println("\n--- caso de uso: REQ 02 ---");
-        if (ingresar(veterinario)) {
-            System.out.println("Acceso concedido. Bienvenido, " + veterinario.getNombre() + ".");
-
-
-            System.out.println("\n--- caso de uso: REQ 01 ---");
-            registrar(perro);
-            registrar(loro);
-            registrar(serpiente);
-            registrar(pezPayaso);
-
-            System.out.println("\n--- caso de uso: REQ 03 ---");
-            veterinario.curar(perro);
-            veterinario.curar(loro);
-            veterinario.curar(serpiente);
-            veterinario.curar(pezPayaso);
-
-            System.out.println("\n--- caso de uso: REQ 04 ---");
-            perro.comer();
-            perro.aullarLoro(loro);
-            loro.comer();
-            loro.hablarA(serpiente);
-            serpiente.comer();
-            serpiente.sisearA(pezPayaso);
-            pezPayaso.comer();
-            pezPayaso.nadarAlrededorDe(perro);
-
-            System.out.println("\n--- caso de uso: REQ 05 ---");
-            dataFast.procesarCobro(perro, 25.0, 12.5);
-            dataFast.procesarCobro(loro, 18.0, 6.0);
-            dataFast.procesarCobro(serpiente, 22.0, 9.5);
-            dataFast.procesarCobro(pezPayaso, 15.0, 8.0);
-            dataFast.imprimirResumen();
-        } else {
-            System.out.println("Acceso denegado. Credenciales incorrectas.");
-        }
-    }
-
-    private boolean ingresar(Veterinario usuario) {
-        if (usuario == null) {
-            return false;
-        }
-        String login = usuario.getLogin();
-        String password = usuario.getPassword();
-        if (login == null || password == null) {
-            return false;
-        }
-        return login.equals(getLog()) && password.equals(getPass());
-    }
-
-    private boolean registrar(ReinoAnimal animal) {
-        if (animal == null) {
-            return false;
-        }
-        System.out.println("Registrando animal: " + animal.getNombre());
-        return true;
-    }
-
-    public String getLog() {
-        return log;
-    }
-
-    public void setLog(String log) {
-        this.log = log;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
+        System.out.println("\n--- Fin R07: Cleinte paga ---\n");
     }
 }

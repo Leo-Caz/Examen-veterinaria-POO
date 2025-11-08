@@ -12,8 +12,4 @@ public abstract class Ave extends AnimalVertebrado {
     protected void romperCascaron() {
         System.out.println("El ave esta rompiendo el cascaron....");
     }
-
-    public void volar() {
-        System.out.println("El ave esta volando....");
-    }
 }

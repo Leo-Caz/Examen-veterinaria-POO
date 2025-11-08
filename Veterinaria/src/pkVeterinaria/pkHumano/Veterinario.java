@@ -49,6 +49,14 @@ public class Veterinario extends Persona {
         return true;
     }
 
+    public String registrarPaciente(ReinoAnimal paciente) {
+
+        if (paciente == null) {
+            return "No hay paciente para registrar";
+        }
+        return "Registrando al " + paciente.getClass().getSimpleName();
+    }
+
     public void curar(ReinoAnimal paciente) {
 
         if (paciente == null) {
