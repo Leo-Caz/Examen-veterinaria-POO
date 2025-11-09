@@ -11,7 +11,7 @@ public class PezPayaso extends Pez {
     public void emergerDelHuevo() {
         System.out.println("El pez payaso esta saliendo del huevo entre los corales....");
     }
-
+    @Override
     public void comer() {
         System.out.println("El pez payaso mordisquea el coral....");
     }
