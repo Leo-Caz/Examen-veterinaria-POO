@@ -44,15 +44,4 @@ public abstract class Persona {
         this.apellido = apellido.toUpperCase();
     }
 
-    public boolean validarCedula(String cedula) {
-        if (cedula == null || cedula.length() != 10) {
-            return false;
-        }
-        for (char c : cedula.toCharArray()) {
-            if (!Character.isDigit(c)) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
