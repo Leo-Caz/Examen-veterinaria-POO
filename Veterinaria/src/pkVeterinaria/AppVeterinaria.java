@@ -12,6 +12,7 @@ import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.ControllerRio;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Nutria;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezCirujanoAzul;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
@@ -29,21 +30,50 @@ public class AppVeterinaria {
         Lobo lobo = new Lobo("Lobo Feroz");
         Nutria nutria = new Nutria("Olivia");
         Cocodrilo cocodrilo = new Cocodrilo("Sombra");
-        PezPayaso pez = new PezPayaso("Nemo");
+        PezPayaso pezPayaso = new PezPayaso("Marlin");
+        PezCirujanoAzul pezCirujano = new PezCirujanoAzul("Dory");
         ControllerRio controllerRio = new ControllerRio();
         DataFast dataFast = new DataFast();
 
-        imprimirCreacion(veterinario, cliente, loro, canarioPaciente, canarioTravieso, conejo, lobo, nutria);
-        ejecutarRegistro(veterinario, Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria));
+        imprimirCreacion(
+            veterinario,
+            cliente,
+            loro,
+            canarioPaciente,
+            canarioTravieso,
+            conejo,
+            lobo,
+            nutria,
+            pezPayaso,
+            pezCirujano
+        );
+        ejecutarRegistro(
+            veterinario,
+            Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, pezPayaso, pezCirujano)
+        );
 
         List<Conejo> conejosHeridos = controllerRio.animalesRio();
 
         escenaCanarioYLoro(canarioTravieso, loro);
         escenaReptil(cocodrilo);
-        escenaPez(pez, lobo);
+        escenaPez(pezPayaso, pezCirujano);
 
-        ejecutarCuraciones(veterinario, loro, canarioPaciente, conejo, lobo, nutria, conejosHeridos);
-        ejecutarPagos(cliente, dataFast, Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria));
+        ejecutarCuraciones(
+            veterinario,
+            loro,
+            canarioPaciente,
+            conejo,
+            lobo,
+            nutria,
+            pezPayaso,
+            pezCirujano,
+            conejosHeridos
+        );
+        ejecutarPagos(
+            cliente,
+            dataFast,
+            Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, pezPayaso, pezCirujano)
+        );
     }
 
     private void imprimirCreacion(
@@ -54,7 +84,9 @@ public class AppVeterinaria {
         Canario canarioTravieso,
         Conejo conejo,
         Lobo lobo,
-        Nutria nutria
+        Nutria nutria,
+        PezPayaso pezPayaso,
+        PezCirujanoAzul pezCirujano
     ) {
         System.out.println(
             "El veterinario se ha creado de nombre \"" + veterinario.getNombre() + "\" con cedula \"" + veterinario.getCedula() + "\""
@@ -68,6 +100,8 @@ public class AppVeterinaria {
         System.out.println("Ha nacido el conejo llamado \"" + conejo.getNombre() + "\"");
         System.out.println("Ha nacido el lobo llamado \"" + lobo.getNombre() + "\"");
         System.out.println("Ha nacido el nutria llamado \"" + nutria.getNombre() + "\"");
+        System.out.println("Ha nacido el pez payaso \"" + pezPayaso.getNombre() + "\"");
+        System.out.println("Ha nacido el pez cirujano azul \"" + pezCirujano.getNombre() + "\"");
     }
 
     private void ejecutarRegistro(Veterinario veterinario, List<? extends ReinoAnimal> animales) {
@@ -101,11 +135,11 @@ public class AppVeterinaria {
         System.out.println("\n--- Fin R04: reptil ---\n");
     }
 
-    private void escenaPez(PezPayaso pez, Lobo lobo) {
+    private void escenaPez(PezPayaso pezPayaso, PezCirujanoAzul pezCirujano) {
         System.out.println("\n--- R05:Pez ---\n");
-        pez.nadar();
-        pez.comer();
-        pez.nadarAlrededorDe(lobo);
+        pezPayaso.comerCon(pezCirujano);
+        pezPayaso.conversarCon(pezCirujano);
+        pezPayaso.planearEscapeCon(pezCirujano, "buscar a su hijo Nemo");
         System.out.println("\n--- Fin R05: Pez ---\n");
     }
 
@@ -116,6 +150,8 @@ public class AppVeterinaria {
         Conejo conejo,
         Lobo lobo,
         Nutria nutria,
+        PezPayaso pezPayaso,
+        PezCirujanoAzul pezCirujano,
         List<Conejo> conejosHeridos
     ) {
         System.out.println("\n--- R06: Veterinario cura a los animales ---\n");
@@ -125,6 +161,8 @@ public class AppVeterinaria {
         pacientes.add(conejo);
         pacientes.add(lobo);
         pacientes.add(nutria);
+        pacientes.add(pezPayaso);
+        pacientes.add(pezCirujano);
         if (conejosHeridos != null) {
             pacientes.addAll(conejosHeridos);
         }

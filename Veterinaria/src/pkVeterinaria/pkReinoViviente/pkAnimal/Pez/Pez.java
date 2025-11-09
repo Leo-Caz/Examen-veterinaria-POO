@@ -1,18 +1,45 @@
 package pkVeterinaria.pkReinoViviente.pkAnimal.Pez;
 
-import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Acuatico;
+import pkVeterinaria.pkReinoViviente.pkAnimal.AnimalVertebrado;
 
-public abstract class Pez extends Acuatico {
-    protected Pez(String nombre) {
-        super(nombre);
+public abstract class Pez extends AnimalVertebrado {
+    public Pez(String nombre) {
+        super();
+        setNombre(nombre);
     }
 
-    @Override
-    public void emergerDelHuevo() {
-        System.out.println("El pez esta saliendo del huevo....");
+    public void conversarCon(Pez companero) {
+        if (companero == null) {
+            return;
+        }
+        System.out.println(
+            "El "
+                + descripcionEspecie()
+                + " ("
+                + getNombre()
+                + ") conversa con el "
+                + companero.descripcionEspecie()
+                + " ("
+                + companero.getNombre()
+                + ")"
+        );
     }
 
-    public void respirarEnAgua() {
-        System.out.println("El pez respira bajo el agua con sus branquias....");
+    public void planearEscapeCon(Pez companero, String objetivo) {
+        if (companero == null) {
+            return;
+        }
+        System.out.println(
+            "El "
+                + descripcionEspecie()
+                + " ("
+                + getNombre()
+                + ") planea escaparse con "
+                + companero.getNombre()
+                + " para "
+                + objetivo
+        );
     }
+
+    protected abstract String descripcionEspecie();
 }
