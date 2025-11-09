@@ -21,6 +21,7 @@ public class Loro extends Ave {
     }
 
     public void hablarA(Cocodrilo serpiente) {
+        
         if (serpiente == null) {
             return;
         }
