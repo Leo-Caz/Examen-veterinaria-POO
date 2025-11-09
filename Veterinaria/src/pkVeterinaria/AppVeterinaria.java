@@ -1,13 +1,14 @@
 package pkVeterinaria;
 
 import java.util.List;
+import pkVeterinaria.pkFinanza.BienestarAnimal;
 import pkVeterinaria.pkFinanza.DataFast;
 import pkVeterinaria.pkHumano.Propietario;
 import pkVeterinaria.pkHumano.Veterinario;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Loro;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.ControllerRio;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Ecosistema.ControllerRio;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
@@ -24,7 +25,7 @@ public class AppVeterinaria {
     public void iniciarMundoAnimal() {
         Propietario propietario = new Propietario("1734537890", "Atena", "Santana");
         Veterinario veterinario = new Veterinario("187654321", "Grupo 1", "Veterinaria");
-        Lobo perro = new Lobo("Rocky");
+        Lobo lobo = new Lobo("Rocky");
         Loro loro = new Loro("Plumas");
         Cocodrilo serpiente = new Cocodrilo("Sombra");
         PezPayaso pezPayaso = new PezPayaso("Nemo");
@@ -43,12 +44,12 @@ public class AppVeterinaria {
 
         if (lstHeridos != null && !lstHeridos.isEmpty()) {
     
-            System.out.println("\n--- caso de uso: REQ 01 (registro en vet) ---");
+            System.out.println("\n--- caso de uso: REQ 01 (registro) ---");
             for (Conejo c : lstHeridos) {
                 registrar(c);  
             }
 
-            System.out.println("\n--- caso de uso: REQ (curar) ---");
+            System.out.println("\n--- caso de uso: REQ 04 (Veterinario) ---");
             for (Conejo c : lstHeridos) {
                 veterinario.curar(c);
             }
@@ -57,39 +58,38 @@ public class AppVeterinaria {
         }
 
         System.out.println("\n--- caso de uso: REQ 03 ---");
-        dataFast.procesarCobroGrupal(lstHeridos,120,80, true);
-        dataFast.imprimirResumen();
+        BienestarAnimal bienestar = new BienestarAnimal("Bienestar Animal");
+        bienestar.cobrarConsultaEmergencia(lstHeridos, 30.0, true);
         System.out.println("FIN");
     
-        System.out.println("\n--- caso de uso: REQ 02 ---");
         if (ingresar(veterinario)) {
             System.out.println("Acceso concedido. Bienvenido, " + veterinario.getNombre() + ".");
 
 
             System.out.println("\n--- caso de uso: REQ 01 ---");
-            registrar(perro);
+            registrar(lobo);
             registrar(loro);
             registrar(serpiente);
             registrar(pezPayaso);
 
-            System.out.println("\n--- caso de uso: REQ 03 ---");
-            veterinario.curar(perro);
+            System.out.println("\n--- caso de uso: REQ 04 ---");
+            veterinario.curar(lobo);
             veterinario.curar(loro);
             veterinario.curar(serpiente);
             veterinario.curar(pezPayaso);
 
-            System.out.println("\n--- caso de uso: REQ 04 ---");
-            perro.comer();
-            perro.aullarLoro(loro);
+            System.out.println("\n--- caso de uso: REQ 05 ---");
+            lobo.comer();
+            lobo.aullarLoro(loro);
             loro.comer();
             loro.hablarA(serpiente);
             serpiente.comer();
             serpiente.sisearA(pezPayaso);
             pezPayaso.comer();
-            pezPayaso.nadarAlrededorDe(perro);
+            pezPayaso.nadarAlrededorDe(lobo);
 
-            System.out.println("\n--- caso de uso: REQ 05 ---");
-            dataFast.procesarCobro(perro, 25.0, 12.5);
+            System.out.println("\n--- caso de uso: REQ 04 ---");
+            dataFast.procesarCobro(lobo, 25.0, 12.5);
             dataFast.procesarCobro(loro, 18.0, 6.0);
             dataFast.procesarCobro(serpiente, 22.0, 9.5);
             dataFast.procesarCobro(pezPayaso, 15.0, 8.0);

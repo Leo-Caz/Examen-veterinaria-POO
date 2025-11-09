@@ -18,7 +18,7 @@ public class Banco {
             return;
         }
         totalConsultas += valor;
-        System.out.println(nombre + " cobra " + valor + " por consulta de " + paciente.getNombre());
+        System.out.println("Al cliente " + nombre + " se le cobra un valor de " + valor + " por consulta de " + paciente.getNombre());
     }
 
     public void cobrarMedicamentos(ReinoAnimal paciente, double valor) {
@@ -26,7 +26,7 @@ public class Banco {
             return;
         }
         totalMedicamentos += valor;
-        System.out.println(nombre + " cobra " + valor + " por medicamentos de " + paciente.getNombre());
+        System.out.println("Al cliente " + nombre + " se le cobra un valor de " + valor + " por medicamentos de " + paciente.getNombre());
     }
 
     public double getTotalConsultas() {

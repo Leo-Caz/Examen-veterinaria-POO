@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Página-1" id="OCG8rNl9BxQHw37x-4Qa">
-        <mxGraphModel dx="2540" dy="636" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="4969" dy="2054" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -20,9 +20,9 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="Tudy51rTULz92ffVEDZM-125" value="&lt;div style=&quot;box-sizing: border-box; width: 100%; background: rgb(228, 228, 228); padding: 2px;&quot;&gt;Veterinaria&amp;nbsp;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontStyle=1" parent="1" vertex="1">
-                    <mxGeometry x="484" y="337" width="610" height="1390" as="geometry"/>
+                    <mxGeometry x="484" y="337" width="610" height="915" as="geometry"/>
                 </mxCell>
-                <mxCell id="Tudy51rTULz92ffVEDZM-120" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;Requerimiento:&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R01: Veterinario registra los animales vertebrados segun una clasificacion (aves,peces,reptiles,...).&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R02: Simulación de interacción entre nutrias, conejos y lobos&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R03: El área de Bienestar Animal cubre los costos por atención y medicamentos de los animales&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R04: El veterinario puede registrar, curar y cobrar por la atención a otros animales vertebrados&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R05: la interacción y acciones entre animales&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+                <mxCell id="Tudy51rTULz92ffVEDZM-120" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;Requerimiento:&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R01: Veterinario registra los animales vertebrados segun una clasificacion (aves,peces,reptiles,...).&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R02: Simulación de interacción entre nutrias, conejos y lobos&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R03: Bienestar Animal cubre los costos por atención y medicamentos de los animales salvajes&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R04: El veterinario puede registrar, curar y cobrar por la atención dadas&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;font face=&quot;Times New Roman&quot;&gt;R05: Interacción y acciones entre animales dentro del consultorio&lt;/font&gt;&lt;/span&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="-863" y="466" width="717" height="256" as="geometry"/>
                 </mxCell>
                 <mxCell id="Tudy51rTULz92ffVEDZM-126" value="Registrar animales vertebrados según su clasificación&amp;nbsp;&lt;span style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;(ave, mamífero, reptil, pez)&lt;/font&gt;&lt;/span&gt;&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -177,15 +177,15 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="Conejos" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-953" y="1195" width="30" height="60" as="geometry"/>
+                    <mxGeometry x="303.5" y="1738" width="30" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="Rio" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=160;" parent="1" vertex="1">
-                    <mxGeometry x="-849" y="879" width="784" height="473" as="geometry"/>
+                    <mxGeometry x="407.5" y="1422" width="784" height="473" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="Nadar en el rio" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="22" vertex="1">
                     <mxGeometry x="35" y="63" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="Juegan entre ellos con el agua" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
+                <mxCell id="6" value="Jugar entre ellos con el agua" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
                     <mxGeometry x="183" y="131" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="22" source="4" target="6" edge="1">
@@ -194,10 +194,10 @@
                 <mxCell id="33" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="22" source="23" target="25" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="Van a tomar agua" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
+                <mxCell id="23" value="Ir a tomar agua" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
                     <mxGeometry x="56" y="327" width="120" height="79" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="Empiezan a jugar entre ellos" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
+                <mxCell id="25" value="Empezar a jugar entre ellos" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
                     <mxGeometry x="329" y="306" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="29" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="22" source="6" target="25" edge="1">
@@ -206,10 +206,10 @@
                         <mxPoint x="456" y="189" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="30" value="Los lobos acechan a los animales" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
+                <mxCell id="30" value="Acechar a los animales" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
                     <mxGeometry x="617" y="315" width="120" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="Se esconden rapidamente" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
+                <mxCell id="37" value="Esconderse rapidamente" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
                     <mxGeometry x="467" y="190" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="22" source="30" target="37" edge="1">
@@ -233,7 +233,7 @@
                         <mxPoint x="602" y="306" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="46" value="Son llevados a la veterinaria" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
+                <mxCell id="46" value="Llevar a la veterinaria" style="ellipse;whiteSpace=wrap;html=1;" parent="22" vertex="1">
                     <mxGeometry x="574" y="44" width="120" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="48" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="22" source="40" target="46" edge="1">
@@ -243,7 +243,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="3" value="Nutria" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-953" y="882" width="30" height="60" as="geometry"/>
+                    <mxGeometry x="303.5" y="1425" width="30" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="5" style="edgeStyle=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="3" target="4" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -252,16 +252,16 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="34" value="Lobo" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="-24" y="1230" width="30" height="60" as="geometry"/>
+                    <mxGeometry x="1232.5" y="1773" width="30" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="47" style="edgeStyle=none;html=1;exitX=0;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="45" target="46" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="45" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
-                    <mxGeometry y="915" width="30" height="60" as="geometry"/>
+                    <mxGeometry x="1256.5" y="1458" width="30" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" value="Bienestar animal" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
-                    <mxGeometry x="266" y="930" width="30" height="60" as="geometry"/>
+                    <mxGeometry x="327" y="1010" width="30" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="51" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;dashed=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="49" target="52" edge="1">
                     <mxGeometry width="160" relative="1" as="geometry">
@@ -274,6 +274,15 @@
                 </mxCell>
                 <mxCell id="52" value="La mascota es salvaje y tuvo un accidente" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="510" y="982" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="Banco" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="112" y="1096" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="54" target="49">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="168" y="995" as="sourcePoint"/>
+                        <mxPoint x="273" y="1065" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>

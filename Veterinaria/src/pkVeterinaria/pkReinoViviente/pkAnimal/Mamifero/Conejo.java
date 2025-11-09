@@ -5,7 +5,7 @@ public class Conejo extends Herbivoro {
 
     public Conejo(String nombre) {
         super(nombre);
-        lactar();
+        //lactar();
         this.orejasLargas = true;
     }
 
