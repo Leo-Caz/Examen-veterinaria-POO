@@ -174,9 +174,15 @@ public class AppVeterinaria {
 
     private void ejecutarPagos(Propietario cliente, DataFast dataFast, List<? extends ReinoAnimal> pacientes) {
         System.out.println("\n--- R07: Cliente paga  ---\n");
+        String apellidoMayus = cliente.getApellido().toUpperCase();
         System.out.println(
-            "El cliente " + cliente.getNombre() + " " + cliente.getApellido() + " esta pagando la atencion de sus animales...."
+            "Al cliente " + cliente.getNombre() + " " + apellidoMayus + " le ofrecen tres maneras de pagar por la antencion de sus animales"
         );
+        System.out.println("1. Transferencia o Efectivo");
+        System.out.println("2. Tarjeta de credito");
+        System.out.println("3. Cheques Bancarios");
+        System.out.println("El cliente " + cliente.getNombre() + " " + apellidoMayus + " elije la opcion 2");
+        System.out.println();
         for (ReinoAnimal paciente : pacientes) {
             dataFast.procesarCobro(paciente, 25.0, 12.5);
         }
