@@ -216,6 +216,6 @@ public class AppVeterinaria {
             dataFast.procesarCobro(paciente, 25.0, 12.5);
         }
         dataFast.imprimirResumen();
-        System.out.println("\n--- Fin R07: Cleinte paga ---\n");
+        System.out.println("\n--- Fin R07: Cliente paga ---\n");
     }
 }
