@@ -27,6 +27,15 @@ public class ControllerRio {
 
         System.out.println("\n--- R02:Animales del Rio ---\n");
 
+        System.out.println("Los mamiferos se preparan para alimentar a sus crias:");
+        for (Conejo conejo : lstConejo) {
+            conejo.lactar();
+        }
+        for (Lobo lobo : lstLobo) {
+            lobo.lactar();
+        }
+        System.out.println();
+
         for (int i = 0; i < 3; i++) {
             Conejo conejo = lstConejo.get(i);
             Nutria nutria = lstNutria.get(i);

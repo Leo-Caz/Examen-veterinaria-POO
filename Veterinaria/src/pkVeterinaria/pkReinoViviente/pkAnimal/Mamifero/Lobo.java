@@ -8,7 +8,6 @@ public class Lobo extends Carnivoro {
     public Lobo(String nombre) {
         super(nombre);
         this.tieneDientes = true;
-        lactar();
     }
 
     @Override
