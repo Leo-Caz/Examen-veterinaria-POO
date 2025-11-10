@@ -15,6 +15,13 @@ public class Serpiente extends CarnivoroReptil {
     }
 
     public void declararVictoria() {
-        System.out.println(descripcionConArticulo() + " (" + getNombre() + ") sale victoriosa");
+        System.out.println(
+            descripcionConArticulo()
+                + " ("
+                + getNombre()
+                + ") sale victoriosa y devora \""
+                + getComidaFavorita()
+                + "\""
+        );
     }
 }
