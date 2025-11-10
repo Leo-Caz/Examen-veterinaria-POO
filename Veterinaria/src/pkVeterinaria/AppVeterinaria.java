@@ -16,6 +16,7 @@ import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezCirujanoAzul;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Pez.PezPayaso;
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
+import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Serpiente;
 
 public class AppVeterinaria {
 
@@ -30,6 +31,7 @@ public class AppVeterinaria {
         Lobo lobo = new Lobo("Lobo Feroz");
         Nutria nutria = new Nutria("Olivia");
         Cocodrilo cocodrilo = new Cocodrilo("Sombra");
+        Serpiente serpiente = new Serpiente("Kaa", "ratones");
         PezPayaso pezPayaso = new PezPayaso("Marlin");
         PezCirujanoAzul pezCirujano = new PezCirujanoAzul("Dory");
         ControllerRio controllerRio = new ControllerRio();
@@ -44,18 +46,20 @@ public class AppVeterinaria {
             conejo,
             lobo,
             nutria,
+            cocodrilo,
+            serpiente,
             pezPayaso,
             pezCirujano
         );
         ejecutarRegistro(
             veterinario,
-            Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, pezPayaso, pezCirujano)
+            Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, cocodrilo, serpiente, pezPayaso, pezCirujano)
         );
 
         List<Conejo> conejosHeridos = controllerRio.animalesRio();
 
         escenaCanarioYLoro(canarioTravieso, loro);
-        escenaReptil(cocodrilo);
+        escenaReptil(cocodrilo, serpiente);
         escenaPez(pezPayaso, pezCirujano);
 
         ejecutarCuraciones(
@@ -65,6 +69,8 @@ public class AppVeterinaria {
             conejo,
             lobo,
             nutria,
+            cocodrilo,
+            serpiente,
             pezPayaso,
             pezCirujano,
             conejosHeridos
@@ -72,7 +78,7 @@ public class AppVeterinaria {
         ejecutarPagos(
             cliente,
             dataFast,
-            Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, pezPayaso, pezCirujano)
+            Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, cocodrilo, serpiente, pezPayaso, pezCirujano)
         );
     }
 
@@ -85,6 +91,8 @@ public class AppVeterinaria {
         Conejo conejo,
         Lobo lobo,
         Nutria nutria,
+        Cocodrilo cocodrilo,
+        Serpiente serpiente,
         PezPayaso pezPayaso,
         PezCirujanoAzul pezCirujano
     ) {
@@ -100,6 +108,8 @@ public class AppVeterinaria {
         System.out.println("Ha nacido el conejo llamado \"" + conejo.getNombre() + "\"");
         System.out.println("Ha nacido el lobo llamado \"" + lobo.getNombre() + "\"");
         System.out.println("Ha nacido el nutria llamado \"" + nutria.getNombre() + "\"");
+        System.out.println("Ha nacido el cocodrilo llamado \"" + cocodrilo.getNombre() + "\"");
+        System.out.println("Ha nacido la serpiente llamada \"" + serpiente.getNombre() + "\"");
         System.out.println("Ha nacido el pez payaso \"" + pezPayaso.getNombre() + "\"");
         System.out.println("Ha nacido el pez cirujano azul \"" + pezCirujano.getNombre() + "\"");
     }
@@ -128,10 +138,25 @@ public class AppVeterinaria {
         System.out.println("\n--- Fin R03: Canario y Loro ---\n");
     }
 
-    private void escenaReptil(Cocodrilo cocodrilo) {
+    private void escenaReptil(Cocodrilo cocodrilo, Serpiente serpiente) {
         System.out.println("\n--- R04:Reptil ---\n");
-        cocodrilo.reptar();
-        cocodrilo.comer();
+        String comidaCocodrilo = "tilapia fresca";
+        System.out.println(
+            "El cocodrilo ("
+                + cocodrilo.getNombre()
+                + ") esta comiendo \""
+                + comidaCocodrilo
+                + "\" junto a la serpiente ("
+                + serpiente.getNombre()
+                + ")"
+        );
+        System.out.println(
+            "En un momento al otro comienzan a pelear "
+                + cocodrilo.getNombre()
+                + " contra "
+                + serpiente.getNombre()
+        );
+        serpiente.declararVictoria();
         System.out.println("\n--- Fin R04: reptil ---\n");
     }
 
@@ -150,6 +175,8 @@ public class AppVeterinaria {
         Conejo conejo,
         Lobo lobo,
         Nutria nutria,
+        Cocodrilo cocodrilo,
+        Serpiente serpiente,
         PezPayaso pezPayaso,
         PezCirujanoAzul pezCirujano,
         List<Conejo> conejosHeridos
@@ -161,6 +188,8 @@ public class AppVeterinaria {
         pacientes.add(conejo);
         pacientes.add(lobo);
         pacientes.add(nutria);
+        pacientes.add(cocodrilo);
+        pacientes.add(serpiente);
         pacientes.add(pezPayaso);
         pacientes.add(pezCirujano);
         if (conejosHeridos != null) {

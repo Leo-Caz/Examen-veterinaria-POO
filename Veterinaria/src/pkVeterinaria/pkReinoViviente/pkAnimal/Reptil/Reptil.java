@@ -8,7 +8,4 @@ public abstract class Reptil extends AnimalVertebrado {
         setNombre(nombre);
     }
 
-    public void reptar() {
-        System.out.println("El reptil se desplaza sigiloso....");
-    }
 }
