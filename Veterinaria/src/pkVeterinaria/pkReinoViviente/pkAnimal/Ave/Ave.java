@@ -3,17 +3,25 @@ package pkVeterinaria.pkReinoViviente.pkAnimal.Ave;
 import pkVeterinaria.pkReinoViviente.pkAnimal.AnimalVertebrado;
 
 public abstract class Ave extends AnimalVertebrado {
-    protected Ave(String nombre) {
+    public String colorPlumaje;
+
+    public Ave(String nombre) {
+        this(nombre, "plumaje multicolor");
+    }
+
+    public Ave(String nombre, String colorPlumaje) {
         super();
         setNombre(nombre);
-        romperCascaron();
+        this.colorPlumaje = colorPlumaje;
     }
 
-    protected void romperCascaron() {
-        System.out.println("El ave esta rompiendo el cascaron....");
+    public String getColorPlumaje() {
+        return colorPlumaje;
     }
 
-    public void volar() {
-        System.out.println("El ave esta volando....");
+    public void acicalarPlumas() {
+        System.out.println("El ave " + getNombre() + " esta acicalando su plumaje " + colorPlumaje + "...");
     }
+
+    public abstract void emitirCanto();
 }

@@ -1,30 +1,21 @@
 package pkVeterinaria.pkReinoViviente.pkAnimal.Ave;
 
-import pkVeterinaria.pkReinoViviente.pkAnimal.Reptil.Cocodrilo;
-
-public class Loro extends Ave {
+public class Loro extends OmnivoroAve {
     public Loro(String nombre) {
-        super(nombre);
+        super(nombre, "verde esmeralda");
     }
 
     @Override
-    protected void romperCascaron() {
-        System.out.println("El loro esta rompiendo el cascaron con su pico....");
-    }
-
-    public void comer() {
-        System.out.println("El loro picotea semillas....");
-    }
-
-    public void hablar() {
-        System.out.println("El loro repite palabras divertidas....");
-    }
-
-    public void hablarA(Cocodrilo serpiente) {
-        
-        if (serpiente == null) {
-            return;
-        }
-        System.out.println("El loro " + getNombre() + " charla con la serpiente " + serpiente.getNombre() + " con mucha curiosidad....");
+    public void emitirCanto() {
+        String sonido = getUltimoSonidoImitado().isEmpty() ? "sus propios silbidos" : getUltimoSonidoImitado();
+        System.out.println(
+            "El loro "
+                + getNombre()
+                + " canta repitiendo "
+                + sonido
+                + " despues de "
+                + getRacionesCompletas()
+                + " racion(es) de comida."
+        );
     }
 }
