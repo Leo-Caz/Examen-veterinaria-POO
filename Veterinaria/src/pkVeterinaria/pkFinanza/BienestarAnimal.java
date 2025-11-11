@@ -1,4 +1,4 @@
-package pkVeterinaria.pkFinanza;
+ackage pkVeterinaria.pkFinanza;
 
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 
@@ -24,4 +24,4 @@ public class BienestarAnimal extends Banco{
         }
         System.out.println("-----------------------------------------------");
     } 
-}
+}p

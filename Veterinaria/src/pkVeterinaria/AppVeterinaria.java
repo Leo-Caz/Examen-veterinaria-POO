@@ -56,10 +56,35 @@ public class AppVeterinaria {
             Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, cocodrilo, serpiente, pezPayaso, pezCirujano)
         );
 
-        List<Conejo> conejosHeridos = controllerRio.animalesRio();
+        System.out.println("\n--- caso de uso: REQ 02 ---");
+        ControllerRio controller = new ControllerRio();
+        List<Conejo> lstHeridos = controller.animalesRio();
 
+        if (lstHeridos != null && !lstHeridos.isEmpty()) {
+    
+            System.out.println("\n--- caso de uso: REQ 01 (registro) ---");
+            for (Conejo c : lstHeridos) {
+                registrar(c);  
+            }
+
+            System.out.println("\n--- caso de uso: REQ 06 (Veterinario) ---");
+            for (Conejo c : lstHeridos) {
+                veterinario.curar(c);
+            }
+        } else {
+            System.out.println("\nNo hubo heridos provenientes del accidente.");
+        }
+
+        System.out.println("\n--- caso de uso: REQ 08 ---");
+        BienestarAnimal bienestar = new BienestarAnimal("Bienestar Animal");
+        bienestar.cobrarConsultaEmergencia(lstHeridos, 30.0, true);
+        System.out.println("FIN");
+
+        System.out.println("\n--- caso de uso: REQ 03 ---");
         escenaCanarioYLoro(canarioTravieso, loro);
+        System.out.println("\n--- caso de uso: REQ 04 ---");
         escenaReptil(cocodrilo, serpiente);
+        System.out.println("\n--- caso de uso: REQ 05 ---");
         escenaPez(pezPayaso, pezCirujano);
 
         ejecutarCuraciones(
