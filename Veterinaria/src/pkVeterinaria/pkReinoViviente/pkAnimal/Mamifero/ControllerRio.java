@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Conejo;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Lobo;
-import pkVeterinaria.pkReinoViviente.pkAnimal.Mamifero.Nutria;
 
 public class ControllerRio {
     public Integer temperaturaGrado;

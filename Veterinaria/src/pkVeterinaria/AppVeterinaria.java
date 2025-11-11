@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import pkVeterinaria.pkFinanza.DataFast;
+import pkVeterinaria.pkFinanza.BienestarAnimal;
 import pkVeterinaria.pkHumano.Propietario;
 import pkVeterinaria.pkHumano.Veterinario;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Canario;
@@ -56,30 +57,6 @@ public class AppVeterinaria {
             Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, cocodrilo, serpiente, pezPayaso, pezCirujano)
         );
 
-        System.out.println("\n--- caso de uso: REQ 02 ---");
-        ControllerRio controller = new ControllerRio();
-        List<Conejo> lstHeridos = controller.animalesRio();
-
-        if (lstHeridos != null && !lstHeridos.isEmpty()) {
-    
-            System.out.println("\n--- caso de uso: REQ 01 (registro) ---");
-            for (Conejo c : lstHeridos) {
-                registrar(c);  
-            }
-
-            System.out.println("\n--- caso de uso: REQ 06 (Veterinario) ---");
-            for (Conejo c : lstHeridos) {
-                veterinario.curar(c);
-            }
-        } else {
-            System.out.println("\nNo hubo heridos provenientes del accidente.");
-        }
-
-        System.out.println("\n--- caso de uso: REQ 08 ---");
-        BienestarAnimal bienestar = new BienestarAnimal("Bienestar Animal");
-        bienestar.cobrarConsultaEmergencia(lstHeridos, 30.0, true);
-        System.out.println("FIN");
-
         System.out.println("\n--- caso de uso: REQ 03 ---");
         escenaCanarioYLoro(canarioTravieso, loro);
         System.out.println("\n--- caso de uso: REQ 04 ---");
@@ -105,6 +82,28 @@ public class AppVeterinaria {
             dataFast,
             Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, cocodrilo, serpiente, pezPayaso, pezCirujano)
         );
+
+        System.out.println("\n--- caso de uso: REQ 02 ---");
+        ControllerRio controller = new ControllerRio();
+        List<Conejo> lstHeridos = controller.animalesRio();
+
+        if (lstHeridos != null && !lstHeridos.isEmpty()) {
+    
+            System.out.println("\n--- caso de uso: REQ 01 (registro) ---");
+            ejecutarRegistro(lstHeridos);
+
+            System.out.println("\n--- caso de uso: REQ 06 (Veterinario) ---");
+            for (Conejo c : lstHeridos) {
+                veterinario.curar(c);
+            }
+        } else {
+            System.out.println("\nNo hubo heridos provenientes del accidente.");
+        }
+
+        System.out.println("\n--- caso de uso: REQ 08 ---");
+        BienestarAnimal bienestar = new BienestarAnimal("Bienestar Animal");
+        bienestar.cobrarConsultaEmergencia(lstHeridos, 30.0, true);
+        System.out.println("FIN");
     }
 
     private void imprimirCreacion(
@@ -119,8 +118,7 @@ public class AppVeterinaria {
         Cocodrilo cocodrilo,
         Serpiente serpiente,
         PezPayaso pezPayaso,
-        PezCirujanoAzul pezCirujano
-    ) {
+        PezCirujanoAzul pezCirujano) {
         System.out.println(
             "El veterinario se ha creado de nombre \"" + veterinario.getNombre() + "\" con cedula \"" + veterinario.getCedula() + "\""
         );
@@ -203,9 +201,7 @@ public class AppVeterinaria {
         Cocodrilo cocodrilo,
         Serpiente serpiente,
         PezPayaso pezPayaso,
-        PezCirujanoAzul pezCirujano,
-        List<Conejo> conejosHeridos
-    ) {
+        PezCirujanoAzul pezCirujano) {
         System.out.println("\n--- R06: Veterinario cura a los animales ---\n");
         List<ReinoAnimal> pacientes = new ArrayList<>();
         pacientes.add(loro);
@@ -217,9 +213,6 @@ public class AppVeterinaria {
         pacientes.add(serpiente);
         pacientes.add(pezPayaso);
         pacientes.add(pezCirujano);
-        if (conejosHeridos != null) {
-            pacientes.addAll(conejosHeridos);
-        }
         for (ReinoAnimal paciente : pacientes) {
             veterinario.curar(paciente);
         }

@@ -1,4 +1,4 @@
-ackage pkVeterinaria.pkFinanza;
+package pkVeterinaria.pkFinanza;
 
 import pkVeterinaria.pkReinoViviente.pkAnimal.ReinoAnimal;
 
@@ -20,7 +20,7 @@ public class BienestarAnimal extends Banco{
         for (ReinoAnimal p : pacientes) {
             cobrarConsulta(p, valor);
             cobrarMedicamentos(p, valor);
-            System.out.println("Bienestar animal paga por consulta y medicamentos en caso de emergencia.");
+            System.out.println("Bienestar animal recibe informe de accidente y paga por consulta y medicamentos en caso de emergencia.");
         }
         System.out.println("-----------------------------------------------");
     } 
