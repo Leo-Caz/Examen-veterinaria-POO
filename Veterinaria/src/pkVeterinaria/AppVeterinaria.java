@@ -3,8 +3,8 @@ package pkVeterinaria;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import pkVeterinaria.pkFinanza.DataFast;
 import pkVeterinaria.pkFinanza.BienestarAnimal;
+import pkVeterinaria.pkFinanza.DataFast;
 import pkVeterinaria.pkHumano.Propietario;
 import pkVeterinaria.pkHumano.Veterinario;
 import pkVeterinaria.pkReinoViviente.pkAnimal.Ave.Canario;
@@ -35,7 +35,6 @@ public class AppVeterinaria {
         Serpiente serpiente = new Serpiente("Kaa", "ratones");
         PezPayaso pezPayaso = new PezPayaso("Marlin");
         PezCirujanoAzul pezCirujano = new PezCirujanoAzul("Dory");
-        ControllerRio controllerRio = new ControllerRio();
         DataFast dataFast = new DataFast();
 
         imprimirCreacion(
@@ -74,8 +73,7 @@ public class AppVeterinaria {
             cocodrilo,
             serpiente,
             pezPayaso,
-            pezCirujano,
-            conejosHeridos
+            pezCirujano
         );
         ejecutarPagos(
             cliente,
@@ -90,7 +88,7 @@ public class AppVeterinaria {
         if (lstHeridos != null && !lstHeridos.isEmpty()) {
     
             System.out.println("\n--- caso de uso: REQ 01 (registro) ---");
-            ejecutarRegistro(lstHeridos);
+            ejecutarRegistro(veterinario, lstHeridos);
 
             System.out.println("\n--- caso de uso: REQ 06 (Veterinario) ---");
             for (Conejo c : lstHeridos) {
