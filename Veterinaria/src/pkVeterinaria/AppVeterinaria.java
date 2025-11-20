@@ -3,6 +3,7 @@ package pkVeterinaria;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import pkVeterinaria.pkFinanza.BienestarAnimal;
 import pkVeterinaria.pkFinanza.DataFast;
 import pkVeterinaria.pkHumano.Propietario;
 import pkVeterinaria.pkHumano.Veterinario;
@@ -34,7 +35,6 @@ public class AppVeterinaria {
         Serpiente serpiente = new Serpiente("Kaa", "ratones");
         PezPayaso pezPayaso = new PezPayaso("Marlin");
         PezCirujanoAzul pezCirujano = new PezCirujanoAzul("Dory");
-        ControllerRio controllerRio = new ControllerRio();
         DataFast dataFast = new DataFast();
 
         imprimirCreacion(
@@ -56,10 +56,11 @@ public class AppVeterinaria {
             Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, cocodrilo, serpiente, pezPayaso, pezCirujano)
         );
 
-        List<Conejo> conejosHeridos = controllerRio.animalesRio();
-
+        System.out.println("\n--- caso de uso: REQ 03 ---");
         escenaCanarioYLoro(canarioTravieso, loro);
+        System.out.println("\n--- caso de uso: REQ 04 ---");
         escenaReptil(cocodrilo, serpiente);
+        System.out.println("\n--- caso de uso: REQ 05 ---");
         escenaPez(pezPayaso, pezCirujano);
 
         ejecutarCuraciones(
@@ -72,14 +73,35 @@ public class AppVeterinaria {
             cocodrilo,
             serpiente,
             pezPayaso,
-            pezCirujano,
-            conejosHeridos
+            pezCirujano
         );
         ejecutarPagos(
             cliente,
             dataFast,
             Arrays.asList(loro, canarioPaciente, conejo, lobo, nutria, cocodrilo, serpiente, pezPayaso, pezCirujano)
         );
+
+        System.out.println("\n--- caso de uso: REQ 02 ---");
+        ControllerRio controller = new ControllerRio();
+        List<Conejo> lstHeridos = controller.animalesRio();
+
+        if (lstHeridos != null && !lstHeridos.isEmpty()) {
+    
+            System.out.println("\n--- caso de uso: REQ 01 (registro) ---");
+            ejecutarRegistro(veterinario, lstHeridos);
+
+            System.out.println("\n--- caso de uso: REQ 06 (Veterinario) ---");
+            for (Conejo c : lstHeridos) {
+                veterinario.curar(c);
+            }
+        } else {
+            System.out.println("\nNo hubo heridos provenientes del accidente.");
+        }
+
+        System.out.println("\n--- caso de uso: REQ 08 ---");
+        BienestarAnimal bienestar = new BienestarAnimal("Bienestar Animal");
+        bienestar.cobrarConsultaEmergencia(lstHeridos, 30.0, true);
+        System.out.println("FIN");
     }
 
     private void imprimirCreacion(
@@ -94,8 +116,7 @@ public class AppVeterinaria {
         Cocodrilo cocodrilo,
         Serpiente serpiente,
         PezPayaso pezPayaso,
-        PezCirujanoAzul pezCirujano
-    ) {
+        PezCirujanoAzul pezCirujano) {
         System.out.println(
             "El veterinario se ha creado de nombre \"" + veterinario.getNombre() + "\" con cedula \"" + veterinario.getCedula() + "\""
         );
@@ -178,9 +199,7 @@ public class AppVeterinaria {
         Cocodrilo cocodrilo,
         Serpiente serpiente,
         PezPayaso pezPayaso,
-        PezCirujanoAzul pezCirujano,
-        List<Conejo> conejosHeridos
-    ) {
+        PezCirujanoAzul pezCirujano) {
         System.out.println("\n--- R06: Veterinario cura a los animales ---\n");
         List<ReinoAnimal> pacientes = new ArrayList<>();
         pacientes.add(loro);
@@ -192,9 +211,6 @@ public class AppVeterinaria {
         pacientes.add(serpiente);
         pacientes.add(pezPayaso);
         pacientes.add(pezCirujano);
-        if (conejosHeridos != null) {
-            pacientes.addAll(conejosHeridos);
-        }
         for (ReinoAnimal paciente : pacientes) {
             veterinario.curar(paciente);
         }
@@ -216,6 +232,6 @@ public class AppVeterinaria {
             dataFast.procesarCobro(paciente, 25.0, 12.5);
         }
         dataFast.imprimirResumen();
-        System.out.println("\n--- Fin R07: Cleinte paga ---\n");
+        System.out.println("\n--- Fin R07: Cliente paga ---\n");
     }
 }

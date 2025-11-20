@@ -12,7 +12,6 @@ public abstract class CarnivoroReptil extends Reptil {
             this.comidaFavorita = comidaFavorita;
         }
     }
-
     protected String getComidaFavorita() {
         return comidaFavorita;
     }
